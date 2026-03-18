@@ -5,434 +5,382 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-  <!-- Primary SEO -->
-  <title>Sohrab S. Ahmadpur — Senior Business Analyst & Data Specialist</title>
-  <meta name="description" content="Sohrab Ahmadpur is a Senior Business Analyst & Data Specialist with 7+ years leading SAP FI/CO implementations, AI-driven government digitalization, and enterprise analytics in Baku, Azerbaijan." />
-  <meta name="keywords" content="Sohrab Ahmadpur, Business Analyst, SAP FI CO, Power BI, Data Specialist, Azerbaijan Railways, Digital Transformation, KPI Dashboards, Baku Azerbaijan" />
+  <title>Sohrab Ahmadpur — Business Analyst & Strategist</title>
+  <meta name="description" content="Sohrab Ahmadpur helps organizations turn business complexity into strategic clarity — through enterprise systems, data, and people." />
   <meta name="author" content="Sohrab S. Ahmadpur" />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://sahmadpur.github.io/" />
 
-  <!-- Open Graph -->
   <meta property="og:type" content="website" />
-  <meta property="og:title" content="Sohrab S. Ahmadpur — Senior Business Analyst" />
-  <meta property="og:description" content="7+ years leading enterprise digital transformation, SAP FI/CO implementation, and data-driven strategy. Based in Baku, Azerbaijan." />
+  <meta property="og:title" content="Sohrab Ahmadpur — Business Analyst & Strategist" />
+  <meta property="og:description" content="Helping organizations turn business complexity into strategic clarity — through enterprise systems, data, and people." />
   <meta property="og:url" content="https://sahmadpur.github.io/" />
-  <meta property="og:locale" content="en_US" />
 
-  <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Sohrab S. Ahmadpur — Senior Business Analyst" />
-  <meta name="twitter:description" content="SAP FI/CO · Power BI · Enterprise Analytics · Digital Transformation. Based in Baku, Azerbaijan." />
+  <meta name="twitter:title" content="Sohrab Ahmadpur — Business Analyst & Strategist" />
 
-  <!-- Schema.org -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Person",
     "name": "Sohrab S. Ahmadpur",
-    "jobTitle": "Senior Business Analyst & Data Specialist",
-    "description": "Senior Business Analyst with 7+ years of experience in enterprise digital transformation, SAP FI/CO implementation, product analytics, and AI-driven government projects.",
+    "jobTitle": "Senior Business Analyst & Strategist",
+    "description": "I help organizations turn business complexity into strategic clarity — through enterprise systems, data, and people.",
     "url": "https://sahmadpur.github.io/",
     "email": "sohrab.ahmadpur@gmail.com",
     "telephone": "+994503673878",
-    "address": { "@type": "PostalAddress", "addressLocality": "Baku", "addressCountry": "Azerbaijan" },
-    "sameAs": ["https://linkedin.com/in/sahmadpur"],
-    "knowsAbout": ["Business Analysis","SAP FI/CO","Power BI","Tableau","Data Analytics","Digital Transformation","Agile","SQL","Python","BPMN","UML"],
-    "alumniOf": { "@type": "CollegeOrUniversity", "name": "Azerbaijan State Oil and Industry University" },
-    "worksFor": { "@type": "Organization", "name": "Azerbaijan Railways (ADY)" }
+    "address": { "@type": "PostalAddress", "addressLocality": "Baku", "addressCountry": "AZ" },
+    "sameAs": ["https://linkedin.com/in/sahmadpur"]
   }
   </script>
 
-  <!-- Fonts: Instrument Serif + Inter + JetBrains Mono -->
+  <!-- Albert Sans — the Bjork theme font -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Albert+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500&display=swap" rel="stylesheet" />
 
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
 
-  <!-- ─── Preloader ─────────────────────────────────────────── -->
-  <div class="preloader" id="preloader" aria-hidden="true">
-    <div class="preloader__wordmark">
-      <span class="preloader__letter" style="--i:0">S</span>
-      <span class="preloader__letter" style="--i:1">o</span>
-      <span class="preloader__letter" style="--i:2">h</span>
-      <span class="preloader__letter" style="--i:3">r</span>
-      <span class="preloader__letter" style="--i:4">a</span>
-      <span class="preloader__letter" style="--i:5">b</span>
-    </div>
-    <div class="preloader__track"><div class="preloader__fill" id="preloaderFill"></div></div>
-  </div>
-
-  <!-- ─── Custom Cursor (desktop) ──────────────────────────── -->
-  <div class="c-dot" id="cDot" aria-hidden="true"></div>
-  <div class="c-ring" id="cRing" aria-hidden="true"></div>
-
-  <!-- ─── Ambient aurora background ────────────────────────── -->
-  <div class="aurora" aria-hidden="true">
-    <div class="aurora__orb aurora__orb--1"></div>
-    <div class="aurora__orb aurora__orb--2"></div>
-    <div class="aurora__orb aurora__orb--3"></div>
-  </div>
-
-  <!-- ─── Scroll progress bar ──────────────────────────────── -->
-  <div class="scroll-prog" id="scrollProg" aria-hidden="true"></div>
-
-  <!-- ─── Mobile header ────────────────────────────────────── -->
+  <!-- ── Mobile header ────────────────────────────────── -->
   <header class="mob-header" id="mobHeader">
-    <span class="mob-header__logo">SA</span>
+    <a href="#" class="mob-logo">Sohrab Ahmadpur</a>
     <button class="burger" id="burger" aria-label="Toggle navigation" aria-expanded="false">
       <span></span><span></span>
     </button>
   </header>
 
-  <!-- ─── Mobile nav overlay ───────────────────────────────── -->
+  <!-- ── Mobile nav overlay ───────────────────────────── -->
   <nav class="mob-nav" id="mobNav" aria-label="Mobile navigation" aria-hidden="true">
+    <button class="mob-nav__close" id="mobNavClose" aria-label="Close navigation">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+    </button>
     <ul class="mob-nav__list">
-      <li style="--i:0"><a href="#about"      class="mob-nav__link">About</a></li>
-      <li style="--i:1"><a href="#experience" class="mob-nav__link">Experience</a></li>
-      <li style="--i:2"><a href="#skills"     class="mob-nav__link">Skills</a></li>
-      <li style="--i:3"><a href="#education"  class="mob-nav__link">Education</a></li>
-      <li style="--i:4"><a href="#contact"    class="mob-nav__link">Contact</a></li>
+      <li style="--i:0"><a href="#about"    class="mob-nav__link">Who I Am</a></li>
+      <li style="--i:1"><a href="#services" class="mob-nav__link">What I Do</a></li>
+      <li style="--i:2"><a href="#story"    class="mob-nav__link">My Story</a></li>
+      <li style="--i:3"><a href="#impact"   class="mob-nav__link">Impact</a></li>
+      <li style="--i:4"><a href="#contact"  class="mob-nav__link">Let's Talk</a></li>
     </ul>
     <div class="mob-nav__foot">
       <a href="mailto:sohrab.ahmadpur@gmail.com">sohrab.ahmadpur@gmail.com</a>
     </div>
   </nav>
 
-  <!-- ─── Main layout ──────────────────────────────────────── -->
-  <div class="wrapper">
+  <!-- ── Page layout ──────────────────────────────────── -->
+  <div class="page">
 
     <!-- Sidebar -->
-    <aside class="sidebar">
+    <aside class="sidebar" id="sidebar">
       <div class="sidebar__inner">
 
-        <div class="sidebar__top">
-          <div class="sidebar__monogram" aria-hidden="true">SA</div>
-          <h1 class="sidebar__name">Sohrab S.<br>Ahmadpur</h1>
-          <p class="sidebar__title">Senior Business Analyst<br><span class="sidebar__title--amp">&amp;</span> Data Specialist</p>
-          <p class="sidebar__bio">I transform complex business processes into data-driven decisions and enterprise-grade solutions.</p>
-          <div class="avail-badge">
-            <span class="avail-dot"></span>
-            Available for consulting
-          </div>
+        <div class="sidebar__brand">
+          <a href="#" class="sidebar__name">Sohrab<br>Ahmadpur</a>
+          <p class="sidebar__role">Business Analyst<br>&amp; Strategist</p>
         </div>
 
-        <nav class="sidebar__nav" aria-label="Page sections">
+        <nav class="sidebar__nav" aria-label="Page navigation">
           <ul>
-            <li><a href="#about"      class="nav-item" data-s="about">      <span class="nav-item__bar"></span><span>About</span></a></li>
-            <li><a href="#experience" class="nav-item" data-s="experience"> <span class="nav-item__bar"></span><span>Experience</span></a></li>
-            <li><a href="#skills"     class="nav-item" data-s="skills">     <span class="nav-item__bar"></span><span>Skills</span></a></li>
-            <li><a href="#education"  class="nav-item" data-s="education">  <span class="nav-item__bar"></span><span>Education</span></a></li>
-            <li><a href="#contact"    class="nav-item" data-s="contact">    <span class="nav-item__bar"></span><span>Contact</span></a></li>
+            <li><a href="#about"    class="nav-link" data-s="about">Who I Am</a></li>
+            <li><a href="#services" class="nav-link" data-s="services">What I Do</a></li>
+            <li><a href="#story"    class="nav-link" data-s="story">My Story</a></li>
+            <li><a href="#impact"   class="nav-link" data-s="impact">Impact</a></li>
+            <li><a href="#contact"  class="nav-link" data-s="contact">Let's Talk</a></li>
           </ul>
         </nav>
 
         <div class="sidebar__foot">
-          <div class="socials">
-            <a href="https://linkedin.com/in/sahmadpur" class="social-btn magnetic" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+          <div class="sidebar__socials">
+            <a href="https://linkedin.com/in/sahmadpur" target="_blank" rel="noopener noreferrer" class="soc-link" aria-label="LinkedIn">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
+              LinkedIn
             </a>
-            <a href="mailto:sohrab.ahmadpur@gmail.com" class="social-btn magnetic" aria-label="Email">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </a>
-            <a href="tel:+994503673878" class="social-btn magnetic" aria-label="Phone">
-              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+            <a href="mailto:sohrab.ahmadpur@gmail.com" class="soc-link" aria-label="Email">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+              Email
             </a>
           </div>
-          <div class="sidebar__location">
-            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
-            Baku, Azerbaijan
-          </div>
+          <p class="sidebar__location">Baku, Azerbaijan</p>
         </div>
 
       </div>
     </aside>
 
-    <!-- Main content -->
-    <main class="content" id="content">
+    <!-- Main -->
+    <main class="main" id="main">
 
-      <!-- ══════ ABOUT ══════ -->
-      <section class="sec" id="about" aria-labelledby="about-h">
-        <p class="sec__label">01 — About</p>
-
-        <div class="about-body">
-          <p>I'm a Senior Business Analyst with <strong>7+ years</strong> at the intersection of enterprise systems, financial transformation, and data-driven strategy. My work sits in the critical space between what organizations need and what technology can deliver.</p>
-          <p>At <strong>Azerbaijan Railways (ADY)</strong>, I lead SAP FI/CO module implementation across financial departments — translating complex operational realities into precise system specifications. In parallel, I consult on <strong>AI-powered government digitalization</strong> projects at Eurodesign CSJC and teach the next generation of analysts at Code Academy.</p>
-          <p>I believe the most valuable BA work happens before the first line of code is written — in the whiteboard sessions, the stakeholder interviews, and the careful translation of business intent into requirements that engineering teams can actually build against.</p>
+      <!-- ══ HERO ═══════════════════════════════════════ -->
+      <section class="hero" id="hero">
+        <div class="hero__content">
+          <span class="hero__eyebrow">Senior Business Analyst · SAP FI/CO · Data Strategist</span>
+          <h1 class="hero__headline">
+            I turn business<br>complexity into<br><em>strategic clarity.</em>
+          </h1>
+          <p class="hero__sub">Working at the intersection of enterprise systems, data, and human decision-making — to build organizations that run smarter.</p>
+          <div class="hero__actions">
+            <a href="#contact" class="btn btn--primary">Let's talk
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            </a>
+            <a href="#story" class="btn btn--ghost">My story</a>
+          </div>
         </div>
+        <div class="hero__photo-wrap">
+          <img src="assets/photo.jpg" alt="Sohrab Ahmadpur — Senior Business Analyst" class="hero__photo" />
+        </div>
+      </section>
 
-        <div class="stats-row">
-          <div class="stat-cell reveal">
-            <span class="stat-cell__val">7+</span>
-            <span class="stat-cell__lbl">Years in Business Analysis</span>
-          </div>
-          <div class="stat-cell reveal" style="--delay: 80ms">
-            <span class="stat-cell__val">3</span>
-            <span class="stat-cell__lbl">Concurrent Active Roles</span>
-          </div>
-          <div class="stat-cell reveal" style="--delay: 160ms">
-            <span class="stat-cell__val">SAP</span>
-            <span class="stat-cell__lbl">FI/CO Lead Implementor</span>
-          </div>
-          <div class="stat-cell reveal" style="--delay: 240ms">
-            <span class="stat-cell__val">4</span>
-            <span class="stat-cell__lbl">Languages Spoken</span>
+      <!-- ══ WHO I AM ════════════════════════════════════ -->
+      <section class="sec" id="about">
+        <div class="sec__inner">
+          <div class="about-split">
+            <div class="about-split__left reveal">
+              <span class="sec__label">Who I Am</span>
+              <h2 class="sec__heading">The person behind<br>the process.</h2>
+            </div>
+            <div class="about-split__right reveal" style="--delay:120ms">
+              <p class="about-lead">I'm Sohrab — a Business Analyst, data strategist, and educator based in Baku, Azerbaijan. For over seven years, I've worked where strategy meets execution: in the room when organizations decide to change, and still there when the change actually happens.</p>
+              <p class="about-body">My work spans three roles simultaneously — leading SAP FI/CO implementation at Azerbaijan Railways, consulting on AI-powered government projects at Eurodesign CSJC, and teaching business analysis at Code Academy. Each role sharpens the others.</p>
+              <p class="about-body">I speak four languages, which means I've learned that clarity is never just a language problem — it's always a thinking problem first.</p>
+              <div class="about-avail">
+                <span class="avail-dot"></span>
+                Available for consulting engagements
+              </div>
+            </div>
           </div>
         </div>
       </section>
 
-      <!-- ══════ EXPERIENCE ══════ -->
-      <section class="sec" id="experience" aria-labelledby="exp-h">
-        <p class="sec__label">02 — Experience</p>
+      <!-- ══ WHAT I DO ═══════════════════════════════════ -->
+      <section class="sec sec--alt" id="services">
+        <div class="sec__inner">
+          <div class="sec__head reveal">
+            <span class="sec__label">What I Do</span>
+            <h2 class="sec__heading">Three things I'm<br>exceptionally good at.</h2>
+          </div>
 
-        <div class="exp-stack">
+          <div class="services-grid">
 
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">2024 — Present</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Senior Business Analyst</h3>
-              <p class="exp-card__org">Azerbaijan Railways <span class="exp-card__loc">ADY · Baku</span></p>
-              <p class="exp-card__desc">Lead BA for SAP FI &amp; CO module implementation across ADY's financial and operational departments. Conduct AS-IS/TO-BE analysis of GL, AP/AR, asset accounting, cost centers and internal orders. Build KPI dashboards, define data migration requirements, and contribute to AI-driven predictive analytics and automation use cases across railway scheduling, ticketing, logistics, and maintenance.</p>
-              <ul class="exp-card__tags">
+            <div class="service-card reveal" style="--delay:0ms">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <h3 class="service-card__title">Enterprise Transformation</h3>
+              <p class="service-card__body">I lead complex system implementations — SAP FI/CO, ERP migrations, AI integrations — from requirements through go-live. I make sure the technology fits the business, not the other way around.</p>
+              <ul class="service-card__tags">
                 <li>SAP FI/CO</li>
-                <li>AS-IS/TO-BE</li>
-                <li>KPI Dashboards</li>
-                <li>Data Migration</li>
-                <li>AI Analytics</li>
-                <li>Cross-dept. Workshops</li>
+                <li>AS-IS / TO-BE Analysis</li>
+                <li>ERP Integration</li>
+                <li>Change Management</li>
               </ul>
             </div>
-          </div>
 
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">Jul 2023 — Present</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Senior BA / BA Consultant</h3>
-              <p class="exp-card__org">Eurodesign CSJC <span class="exp-card__loc">Remote</span></p>
-              <p class="exp-card__desc">Led BA for MOJ AI projects automating document classification and legal case processing. Defined business, functional, and data requirements for ML models used in document recognition. Designed workflows integrating AI outputs into existing government systems, established accuracy KPIs, and coordinated legal domain experts, developers, and data scientists for regulatory compliance.</p>
-              <ul class="exp-card__tags">
-                <li>AI/ML Requirements</li>
-                <li>Gov. Digitalization</li>
-                <li>Root-Cause Analysis</li>
-                <li>RPA Workflows</li>
-                <li>Stakeholder Mgmt.</li>
+            <div class="service-card reveal" style="--delay:100ms">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg>
+              </div>
+              <h3 class="service-card__title">Data Strategy &amp; Analytics</h3>
+              <p class="service-card__body">From raw operational data to executive dashboards: I design KPI frameworks, analytics pipelines, and reporting systems that give leadership the visibility to make confident decisions.</p>
+              <ul class="service-card__tags">
+                <li>Power BI / Tableau</li>
+                <li>KPI Design</li>
+                <li>SQL · Python · R</li>
+                <li>ML Requirements</li>
               </ul>
             </div>
-          </div>
 
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">2024 — Present</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Business Analysis Instructor</h3>
-              <p class="exp-card__org">Code Academy <span class="exp-card__loc">Baku</span></p>
-              <p class="exp-card__desc">Deliver structured BA training covering SDLC, systems analysis, UML, BPMN, Agile, and requirements engineering. Teach introductory data analytics and KPI measurement. Mentor students on real-world projects.</p>
-              <ul class="exp-card__tags">
-                <li>UML / BPMN</li>
+            <div class="service-card reveal" style="--delay:200ms">
+              <div class="service-card__icon" aria-hidden="true">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+              </div>
+              <h3 class="service-card__title">Education &amp; Mentoring</h3>
+              <p class="service-card__body">I teach business analysis at Code Academy — turning theory into practice through real-world projects. I believe sharing how to think about problems creates more solutions than any single consultant ever could.</p>
+              <ul class="service-card__tags">
+                <li>BA Training</li>
                 <li>Agile / Scrum</li>
-                <li>SDLC</li>
-                <li>Mentoring</li>
+                <li>Requirements Engineering</li>
+                <li>UML · BPMN</li>
               </ul>
             </div>
+
           </div>
-
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">Feb 2021 — Jul 2023</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Head of Product Operations</h3>
-              <p class="exp-card__org">Kibrit Tech <span class="exp-card__loc">Baku</span></p>
-              <p class="exp-card__desc">Led analytical and operational improvements across product workflows. Analyzed user behavior, feature adoption, and customer pain points. Defined success metrics, reporting structures, and operational KPIs. Coordinated product, engineering, marketing, and operations for data-informed product decisions.</p>
-              <ul class="exp-card__tags">
-                <li>Product Analytics</li>
-                <li>Operational KPIs</li>
-                <li>Dashboard Design</li>
-                <li>Cross-functional</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">Sep 2019 — Feb 2021</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Product Development Specialist</h3>
-              <p class="exp-card__org">Kibrit Tech <span class="exp-card__loc">Baku</span></p>
-              <p class="exp-card__desc">Planned and monitored product development activities with risk, cost, and schedule analysis. Supported product teams with data-backed insights for feature decisions. Prepared management dashboards and reports.</p>
-              <ul class="exp-card__tags">
-                <li>Risk Analysis</li>
-                <li>Product Roadmap</li>
-                <li>Reporting</li>
-              </ul>
-            </div>
-          </div>
-
-          <div class="exp-card reveal">
-            <div class="exp-card__side">
-              <span class="exp-card__period">Apr 2019 — Sep 2019</span>
-            </div>
-            <div class="exp-card__main">
-              <h3 class="exp-card__role">Project Manager</h3>
-              <p class="exp-card__org">Kibrit Tech <span class="exp-card__loc">Baku</span></p>
-              <p class="exp-card__desc">Coordinated multi-team product development. Monitored production efficiency using operational data and ensured quality through continuous evaluation.</p>
-              <ul class="exp-card__tags">
-                <li>Project Coordination</li>
-                <li>Quality Assurance</li>
-                <li>Efficiency Tracking</li>
-              </ul>
-            </div>
-          </div>
-
-        </div><!-- /exp-stack -->
-
-        <div class="exp-cta reveal">
-          <a href="mailto:sohrab.ahmadpur@gmail.com" class="inline-link">
-            Request full CV
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
-          </a>
         </div>
-
       </section>
 
-      <!-- ══════ SKILLS ══════ -->
-      <section class="sec" id="skills" aria-labelledby="skills-h">
-        <p class="sec__label">03 — Skills</p>
+      <!-- ══ MY STORY ════════════════════════════════════ -->
+      <section class="sec" id="story">
+        <div class="sec__inner">
+          <div class="story-layout">
 
-        <div class="skills-cols reveal">
-          <div class="skills-col">
-            <h3 class="skills-col__title">Data &amp; Analytics</h3>
-            <ul class="skills-list">
-              <li><span>SQL</span><span class="skill-level">Intermediate</span></li>
-              <li><span>Microsoft Excel</span><span class="skill-level">Advanced</span></li>
-              <li><span>Power BI</span><span class="skill-level">Proficient</span></li>
-              <li><span>Tableau</span><span class="skill-level">Proficient</span></li>
-              <li><span>Python — pandas, numpy, seaborn</span></li>
-              <li><span>R / RStudio Server</span></li>
-              <li><span>Jupyter Notebook</span></li>
-              <li><span>Data Visualization &amp; Reporting</span></li>
-              <li><span>KPI Design &amp; Measurement</span></li>
-              <li><span>Business Data Modeling</span></li>
-            </ul>
-          </div>
-          <div class="skills-col">
-            <h3 class="skills-col__title">Business &amp; Systems</h3>
-            <ul class="skills-list">
-              <li><span>SAP FI/CO</span></li>
-              <li><span>Jira · Confluence · Trello</span></li>
-              <li><span>Agile — Scrum / Kanban</span></li>
-              <li><span>BPMN · UML</span></li>
-              <li><span>MS Project · Gantt Tools</span></li>
-              <li><span>Requirements Engineering</span></li>
-              <li><span>SEM Tools · Social Bakers</span></li>
-              <li><span>Nginx / Apache</span><span class="skill-level">Working</span></li>
-              <li><span>Linux — CentOS, Ubuntu</span><span class="skill-level">Working</span></li>
-            </ul>
-          </div>
-        </div>
+            <div class="story-left reveal">
+              <span class="sec__label">My Story</span>
+              <h2 class="sec__heading">Complexity is never<br>the enemy.<br><em>Confusion is.</em></h2>
+              <div class="story-meta">
+                <div class="story-meta__item">
+                  <strong>Currently</strong>
+                  <span>Azerbaijan Railways · Eurodesign CSJC · Code Academy</span>
+                </div>
+                <div class="story-meta__item">
+                  <strong>Based in</strong>
+                  <span>Baku, Azerbaijan</span>
+                </div>
+                <div class="story-meta__item">
+                  <strong>Languages</strong>
+                  <span>Azerbaijani · Russian · English · Turkish</span>
+                </div>
+              </div>
+            </div>
 
-        <div class="lang-section reveal">
-          <h3 class="skills-col__title">Languages</h3>
-          <div class="lang-grid">
-            <div class="lang-card">
-              <span class="lang-card__name">Azerbaijani</span>
-              <div class="lang-card__dots" aria-label="Native">
-                <span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span>
+            <div class="story-right reveal" style="--delay:100ms">
+              <p>I grew up believing the best solutions come from understanding people first, systems second. That belief has shaped every project I've taken on.</p>
+              <p>After nearly a decade at the crossroads of enterprise technology and business strategy, I've built a practice around one core idea: my job is not to deliver documents — it's to change how organizations think.</p>
+              <p>At Azerbaijan Railways, I'm helping one of the country's largest enterprises rethink its financial and operational systems from the ground up. At Eurodesign, I'm bridging the gap between AI research and government policy. At Code Academy, I'm training the analysts who will tackle problems I haven't even seen yet.</p>
+              <p>Each role asks the same fundamental question: <em>what does this organization actually need, and what's standing in the way?</em> That question is what gets me to the whiteboard every morning.</p>
+
+              <div class="story-certs">
+                <h4 class="story-certs__title">Expertise areas</h4>
+                <div class="story-certs__grid">
+                  <span>Agile / Scrum</span>
+                  <span>SAP FI/CO</span>
+                  <span>Power BI</span>
+                  <span>SQL</span>
+                  <span>Python</span>
+                  <span>BPMN · UML</span>
+                  <span>Jira · Confluence</span>
+                  <span>MS Project</span>
+                  <span>Tableau</span>
+                  <span>Jupyter</span>
+                  <span>Linux</span>
+                  <span>R / RStudio</span>
+                </div>
               </div>
-              <span class="lang-card__lvl">Native</span>
             </div>
-            <div class="lang-card">
-              <span class="lang-card__name">Russian</span>
-              <div class="lang-card__dots" aria-label="Fluent">
-                <span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span>
-              </div>
-              <span class="lang-card__lvl">Fluent</span>
-            </div>
-            <div class="lang-card">
-              <span class="lang-card__name">English</span>
-              <div class="lang-card__dots" aria-label="Fluent">
-                <span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span>
-              </div>
-              <span class="lang-card__lvl">Fluent</span>
-            </div>
-            <div class="lang-card">
-              <span class="lang-card__name">Turkish</span>
-              <div class="lang-card__dots" aria-label="Fluent">
-                <span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span><span class="ld ld--on"></span>
-              </div>
-              <span class="lang-card__lvl">Fluent</span>
-            </div>
+
           </div>
         </div>
-
       </section>
 
-      <!-- ══════ EDUCATION ══════ -->
-      <section class="sec" id="education" aria-labelledby="edu-h">
-        <p class="sec__label">04 — Education</p>
-
-        <div class="edu-card reveal">
-          <div class="edu-card__year">2012 — 2019</div>
-          <div class="edu-card__body">
-            <h3 class="edu-card__deg">BSc, Empirical Sciences &amp; Programming</h3>
-            <p class="edu-card__school">Azerbaijan State Oil and Industry University</p>
-            <div class="edu-card__award">
-              <svg width="14" height="14" viewBox="0 0 24 24" fill="#f59e0b"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
-              1st Place — Annual Public Speaking Contest, 2013
-            </div>
-            <p class="edu-card__courses">Algorithm Theory &nbsp;·&nbsp; Data Processing Optimization &nbsp;·&nbsp; Discrete Calculus &nbsp;·&nbsp; Hardware Management</p>
+      <!-- ══ IMPACT ══════════════════════════════════════ -->
+      <section class="sec sec--dark" id="impact">
+        <div class="sec__inner">
+          <div class="sec__head reveal">
+            <span class="sec__label sec__label--light">Impact</span>
+            <h2 class="sec__heading sec__heading--light">Work that moves<br>organizations forward.</h2>
           </div>
-        </div>
 
+          <div class="impact-grid">
+            <div class="impact-card reveal" style="--delay:0ms">
+              <span class="impact-card__num">7+</span>
+              <span class="impact-card__title">Years of practice</span>
+              <p class="impact-card__desc">Working across enterprise IT, government digitalization, and education — accumulating depth across every stage of organizational change.</p>
+            </div>
+            <div class="impact-card reveal" style="--delay:80ms">
+              <span class="impact-card__num">3</span>
+              <span class="impact-card__title">Active organizations</span>
+              <p class="impact-card__desc">Leading concurrent high-stakes engagements at a national railway, an AI consultancy, and an educational institution — simultaneously.</p>
+            </div>
+            <div class="impact-card reveal" style="--delay:160ms">
+              <span class="impact-card__num">SAP</span>
+              <span class="impact-card__title">Full FI/CO cycle</span>
+              <p class="impact-card__desc">End-to-end implementation responsibility across GL, AP/AR, asset accounting, cost centers, and internal orders — at enterprise scale.</p>
+            </div>
+            <div class="impact-card reveal" style="--delay:240ms">
+              <span class="impact-card__num">AI</span>
+              <span class="impact-card__title">Government integration</span>
+              <p class="impact-card__desc">Defining ML model requirements for document classification and legal case automation — bridging research, policy, and production systems.</p>
+            </div>
+          </div>
+
+          <div class="timeline reveal">
+            <h3 class="timeline__title">Where I've worked</h3>
+            <div class="timeline__items">
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__body">
+                  <span class="timeline__period">2024 — Present</span>
+                  <strong class="timeline__org">Azerbaijan Railways (ADY)</strong>
+                  <span class="timeline__role">Senior Business Analyst</span>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__body">
+                  <span class="timeline__period">Jul 2023 — Present</span>
+                  <strong class="timeline__org">Eurodesign CSJC</strong>
+                  <span class="timeline__role">Senior BA / BA Consultant</span>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__body">
+                  <span class="timeline__period">2024 — Present</span>
+                  <strong class="timeline__org">Code Academy</strong>
+                  <span class="timeline__role">Business Analysis Instructor</span>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__body">
+                  <span class="timeline__period">2019 — 2023</span>
+                  <strong class="timeline__org">Kibrit Tech</strong>
+                  <span class="timeline__role">Project Manager → Product Dev. Specialist → Head of Product Operations</span>
+                </div>
+              </div>
+              <div class="timeline__item">
+                <div class="timeline__dot"></div>
+                <div class="timeline__body">
+                  <span class="timeline__period">2012 — 2019</span>
+                  <strong class="timeline__org">Azerbaijan State Oil and Industry University</strong>
+                  <span class="timeline__role">BSc, Empirical Sciences &amp; Programming · 1st Place, Public Speaking 2013</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
       </section>
 
-      <!-- ══════ CONTACT ══════ -->
-      <section class="sec sec--last" id="contact" aria-labelledby="contact-h">
-        <p class="sec__label">05 — Contact</p>
-
-        <h2 class="contact-heading reveal" id="contact-h">
-          Let's work<br><em>together.</em>
-        </h2>
-        <p class="contact-sub reveal">Whether you're looking for a BA consultant, instructor, or a collaborator on a digital transformation project — I'd love to hear from you.</p>
-
-        <div class="contact-links reveal">
-          <a href="mailto:sohrab.ahmadpur@gmail.com" class="contact-link magnetic">
-            <span class="contact-link__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
-            </span>
-            sohrab.ahmadpur@gmail.com
-          </a>
-          <a href="tel:+994503673878" class="contact-link magnetic">
-            <span class="contact-link__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12a19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 3.62 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.92-.92a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
-            </span>
-            (+994 50) 367 3878
-          </a>
-          <a href="https://linkedin.com/in/sahmadpur" class="contact-link magnetic" target="_blank" rel="noopener noreferrer">
-            <span class="contact-link__icon">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 0 1-2.063-2.065 2.064 2.064 0 1 1 2.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-            </span>
-            linkedin.com/in/sahmadpur
-          </a>
+      <!-- ══ LET'S TALK ══════════════════════════════════ -->
+      <section class="sec" id="contact">
+        <div class="sec__inner">
+          <div class="contact-layout">
+            <div class="contact-left reveal">
+              <span class="sec__label">Let's Talk</span>
+              <h2 class="contact-heading">Ready to solve<br>something hard<br><em>together?</em></h2>
+              <p class="contact-sub">Whether it's a consulting engagement, a speaking invitation, or a collaboration you haven't quite figured out how to pitch yet — reach out. I read everything.</p>
+            </div>
+            <div class="contact-right reveal" style="--delay:100ms">
+              <div class="contact-methods">
+                <a href="mailto:sohrab.ahmadpur@gmail.com" class="contact-method">
+                  <div class="contact-method__label">Email</div>
+                  <div class="contact-method__val">sohrab.ahmadpur@gmail.com
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </div>
+                </a>
+                <a href="https://linkedin.com/in/sahmadpur" target="_blank" rel="noopener noreferrer" class="contact-method">
+                  <div class="contact-method__label">LinkedIn</div>
+                  <div class="contact-method__val">linkedin.com/in/sahmadpur
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </div>
+                </a>
+                <a href="tel:+994503673878" class="contact-method">
+                  <div class="contact-method__label">Phone</div>
+                  <div class="contact-method__val">(+994 50) 367 3878
+                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+                  </div>
+                </a>
+              </div>
+            </div>
+          </div>
         </div>
-
       </section>
 
       <footer class="footer">
         <p>&copy; <span id="yr"></span> Sohrab S. Ahmadpur &nbsp;·&nbsp; Baku, Azerbaijan</p>
       </footer>
 
-    </main><!-- /content -->
-  </div><!-- /wrapper -->
+    </main>
+  </div><!-- /page -->
 
   <script src="script.js"></script>
 </body>
