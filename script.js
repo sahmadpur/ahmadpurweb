@@ -91,4 +91,62 @@
   window.addEventListener('scroll', onScroll, { passive: true });
   onScroll();
 
+  /* ── Inertial scroll (desktop wheel only) ──────────────
+     Wheel input moves a target; the page glides toward it
+     with capped velocity so the 3D flight always stays
+     cinematic. Touch, keyboard, and reduced-motion users
+     keep native scrolling. */
+  var finePointer = matchMedia('(pointer: fine)').matches;
+  var noMotion = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  if (finePointer && !noMotion) {
+    var targetY = window.scrollY;
+    var currentY = window.scrollY;
+    var gliding = false;
+    var lastT = 0;
+    var MAX_SPEED = 2800;     /* px per second, regardless of refresh rate */
+
+    var maxScroll = function () {
+      return document.documentElement.scrollHeight - window.innerHeight;
+    };
+
+    var glide = function (now) {
+      var dt = Math.min((now - lastT) / 1000 || 0.016, 0.05);
+      lastT = now;
+
+      var k = 1 - Math.exp(-5.5 * dt);          /* framerate-independent ease */
+      var delta = (targetY - currentY) * k;
+      var cap = MAX_SPEED * dt;
+      if (delta > cap) delta = cap;
+      if (delta < -cap) delta = -cap;
+      currentY += delta;
+
+      if (Math.abs(targetY - currentY) < 0.5) {
+        currentY = targetY;
+        gliding = false;
+      }
+      window.scrollTo({ top: currentY, behavior: 'instant' });
+      if (gliding) requestAnimationFrame(glide);
+    };
+
+    window.addEventListener('wheel', function (e) {
+      if (e.ctrlKey) return;                    /* pinch-zoom */
+      if (mobNav && mobNav.classList.contains('open')) return;
+      e.preventDefault();
+
+      var dy = e.deltaY;
+      if (e.deltaMode === 1) dy *= 16;          /* line mode (Firefox) */
+      if (e.deltaMode === 2) dy *= window.innerHeight;
+
+      targetY = Math.max(0, Math.min(maxScroll(), targetY + dy));
+      if (!gliding) { gliding = true; lastT = performance.now(); requestAnimationFrame(glide); }
+    }, { passive: false });
+
+    /* Resync when scrolling happens outside the glide loop
+       (anchor links, keyboard, scrollbar drag) */
+    window.addEventListener('scroll', function () {
+      if (!gliding) { targetY = currentY = window.scrollY; }
+    }, { passive: true });
+  }
+
 })();
