@@ -535,6 +535,12 @@ html.no-webgl body {
   margin-bottom: 16px;
 }
 
+.story-certs__extra {
+  margin-top: 16px;
+  font-size: 0.85rem;
+  color: var(--faint);
+}
+
 /* ── Impact ───────────────────────────────────────── */
 
 .impact-grid {
