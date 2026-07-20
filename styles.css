@@ -15,7 +15,7 @@
   --glass-brd: rgba(140, 160, 255, 0.13);
   --grad:      linear-gradient(120deg, var(--blue), var(--violet));
 
-  --font-display: "Syne", sans-serif;
+  --font-display: "Oswald", sans-serif;
   --font-body:    "Instrument Sans", sans-serif;
   --font-mono:    "JetBrains Mono", monospace;
 }
@@ -174,10 +174,10 @@ html.no-webgl body {
 
 .sec__heading {
   font-family: var(--font-display);
-  font-weight: 700;
+  font-weight: 600;
   font-size: clamp(2rem, 4.2vw, 3.4rem);
-  line-height: 1.08;
-  letter-spacing: -0.015em;
+  line-height: 1.12;
+  letter-spacing: 0.01em;
   margin-bottom: 28px;
 }
 
@@ -263,7 +263,7 @@ html.no-webgl body {
 }
 
 .hero__headline {
-  font-family: "Oswald", var(--font-display);
+  font-family: var(--font-display);
   font-weight: 600;
   font-size: clamp(2.4rem, 5vw, 4.4rem);
   line-height: 1.08;
@@ -548,7 +548,7 @@ html.no-webgl body {
 
 .impact-card__num {
   font-family: var(--font-display);
-  font-weight: 800;
+  font-weight: 700;
   font-size: 2.6rem;
   line-height: 1;
   display: block;
