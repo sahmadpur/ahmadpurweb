@@ -90,14 +90,30 @@
       F[3][i * 3 + 2] = Math.cos(t * Math.PI * 2) * 3.2 + gauss() * 0.7;
     }
 
-    // 4 — calm lattice: perfect cubic grid
-    const n = Math.ceil(Math.cbrt(COUNT));
-    const spacing = 17 / n;
-    for (let i = 0; i < COUNT; i++) {
-      const x = i % n, y = Math.floor(i / n) % n, z = Math.floor(i / (n * n));
-      F[4][i * 3 + 0] = (x - n / 2) * spacing;
-      F[4][i * 3 + 1] = (y - n / 2) * spacing;
-      F[4][i * 3 + 2] = (z - n / 2) * spacing;
+    // 4 — clarity globe: dense latitude rings form a sphere of light
+    const R4 = 8.5;
+    const LAT = 26;
+    {
+      const weights = [];
+      let wsum = 0;
+      for (let j = 0; j < LAT; j++) {
+        const w = Math.sin(Math.PI * (j + 0.5) / LAT);
+        weights.push(w);
+        wsum += w;
+      }
+      let i = 0;
+      for (let j = 0; j < LAT && i < COUNT; j++) {
+        const m = j === LAT - 1
+          ? COUNT - i
+          : Math.max(3, Math.round(COUNT * weights[j] / wsum));
+        const th = Math.PI * (j + 0.5) / LAT;
+        for (let k = 0; k < m && i < COUNT; k++, i++) {
+          const ph = (k / m) * Math.PI * 2;
+          F[4][i * 3 + 0] = Math.sin(th) * Math.cos(ph) * R4;
+          F[4][i * 3 + 1] = Math.cos(th) * R4;
+          F[4][i * 3 + 2] = Math.sin(th) * Math.sin(ph) * R4;
+        }
+      }
     }
 
     /* ── Particle attributes ───────────────────────── */
@@ -187,20 +203,26 @@
     points.frustumCulled = false;
     universe.add(points);
 
-    /* Lattice connective tissue — visible only at full clarity */
-    const lineCount = isMobile ? 500 : 1400;
+    /* Meridian lines cross the globe's rings — visible only at full clarity */
+    const MER = isMobile ? 12 : 20;
+    const MSEG = isMobile ? 36 : 48;
+    const lineCount = MER * MSEG;
     const linePos = new Float32Array(lineCount * 6);
-    for (let i = 0; i < lineCount; i++) {
-      const a = Math.floor(Math.random() * COUNT);
-      const x = a % n, y = Math.floor(a / n) % n, z = Math.floor(a / (n * n));
-      const axis = Math.floor(Math.random() * 3);
-      const bx = axis === 0 ? x + 1 : x, by = axis === 1 ? y + 1 : y, bz = axis === 2 ? z + 1 : z;
-      linePos[i * 6 + 0] = (x - n / 2) * spacing;
-      linePos[i * 6 + 1] = (y - n / 2) * spacing;
-      linePos[i * 6 + 2] = (z - n / 2) * spacing;
-      linePos[i * 6 + 3] = (bx - n / 2) * spacing;
-      linePos[i * 6 + 4] = (by - n / 2) * spacing;
-      linePos[i * 6 + 5] = (bz - n / 2) * spacing;
+    {
+      let li = 0;
+      for (let m = 0; m < MER; m++) {
+        const ph = (m / MER) * Math.PI * 2;
+        for (let s = 0; s < MSEG; s++, li++) {
+          const t0 = Math.PI * s / MSEG;
+          const t1 = Math.PI * (s + 1) / MSEG;
+          linePos[li * 6 + 0] = Math.sin(t0) * Math.cos(ph) * R4;
+          linePos[li * 6 + 1] = Math.cos(t0) * R4;
+          linePos[li * 6 + 2] = Math.sin(t0) * Math.sin(ph) * R4;
+          linePos[li * 6 + 3] = Math.sin(t1) * Math.cos(ph) * R4;
+          linePos[li * 6 + 4] = Math.cos(t1) * R4;
+          linePos[li * 6 + 5] = Math.sin(t1) * Math.sin(ph) * R4;
+        }
+      }
     }
     const lineGeo = new THREE.BufferGeometry();
     lineGeo.setAttribute('position', new THREE.BufferAttribute(linePos, 3));
@@ -258,12 +280,12 @@
       new THREE.Vector3(-19, -5, 8),
       new THREE.Vector3(-9, 9, -24),
       new THREE.Vector3(17, 4, -20),
-      new THREE.Vector3(0, 2, 27)
+      new THREE.Vector3(0, 14, 22)
     ], false, 'catmullrom', 0.35);
 
     /* Journey mapping: page scroll → segment 0..4 */
     const anchors = [0, 0.22, 0.45, 0.70, 1.0];
-    const chaosLevels = [3.6, 1.5, 0.75, 0.35, 0.07];
+    const chaosLevels = [3.6, 1.5, 0.75, 0.35, 0.015];
 
     const piecewise = (p, values) => {
       for (let i = 0; i < anchors.length - 1; i++) {
@@ -328,7 +350,7 @@
       uniforms.uSeg.value = piecewise(smoothP, segLevels);
       uniforms.uChaos.value = piecewise(smoothP, chaosLevels);
 
-      lineMat.opacity = Math.max(0, (uniforms.uSeg.value - 3.25) / 0.75) * 0.16;
+      lineMat.opacity = Math.max(0, (uniforms.uSeg.value - 3.25) / 0.75) * 0.3;
 
       universe.rotation.y = t * 0.015 + smoothP * 0.9;
 
