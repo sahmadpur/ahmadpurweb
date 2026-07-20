@@ -1,6 +1,6 @@
 /* ============================================================
    SOHRAB AHMADPUR — script.js
-   Minimal JS: mobile nav · active nav · scroll reveal · footer year
+   UI layer: mobile nav · scroll spy · reveals · rail progress
    ============================================================ */
 (function () {
   'use strict';
@@ -8,90 +8,87 @@
   var $ = function (s) { return document.querySelector(s); };
   var $$ = function (s) { return Array.prototype.slice.call(document.querySelectorAll(s)); };
 
-  /* ── Mobile nav ──────────────────────────────────────── */
-  var burger      = $('#burger');
-  var mobNav      = $('#mobNav');
-  var mobNavClose = $('#mobNavClose');
-  var mobOpen     = false;
-
-  function openNav() {
-    mobOpen = true;
-    burger.classList.add('open');
-    burger.setAttribute('aria-expanded', 'true');
-    mobNav.classList.add('open');
-    mobNav.setAttribute('aria-hidden', 'false');
-    document.body.style.overflow = 'hidden';
-  }
-  function closeNav() {
-    mobOpen = false;
-    burger.classList.remove('open');
-    burger.setAttribute('aria-expanded', 'false');
-    mobNav.classList.remove('open');
-    mobNav.setAttribute('aria-hidden', 'true');
-    document.body.style.overflow = '';
+  /* WebGL support gate — scene.js also sets this on any init failure */
+  if (!('WebGLRenderingContext' in window)) {
+    document.documentElement.classList.add('no-webgl');
   }
 
-  if (burger) burger.addEventListener('click', function () { mobOpen ? closeNav() : openNav(); });
-  if (mobNavClose) mobNavClose.addEventListener('click', closeNav);
-
-  $$('.mob-nav__link').forEach(function (link) {
-    link.addEventListener('click', closeNav);
-  });
-
-  document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && mobOpen) { closeNav(); if (burger) burger.focus(); }
-  });
-
-  /* ── Smooth scroll for anchor links ──────────────────── */
-  document.querySelectorAll('a[href^="#"]').forEach(function (anchor) {
-    anchor.addEventListener('click', function (e) {
-      var id = this.getAttribute('href');
-      if (id === '#') return;
-      var target = document.querySelector(id);
-      if (!target) return;
-      e.preventDefault();
-      var offset = window.innerWidth <= 768 ? 64 : 0;
-      var top = target.getBoundingClientRect().top + window.pageYOffset - offset;
-      window.scrollTo({ top: top, behavior: 'smooth' });
-    });
-  });
-
-  /* ── Active nav link on scroll ────────────────────────── */
-  var navLinks = $$('.nav-link');
-  var sections = $$('section[id]');
-
-  function updateNav() {
-    var scrollY = window.pageYOffset;
-    var current = '';
-
-    sections.forEach(function (sec) {
-      var top    = sec.offsetTop - 140;
-      var bottom = top + sec.offsetHeight;
-      if (scrollY >= top && scrollY < bottom) current = sec.id;
-    });
-
-    navLinks.forEach(function (link) {
-      link.classList.toggle('active', link.dataset.s === current);
-    });
-  }
-
-  window.addEventListener('scroll', updateNav, { passive: true });
-  updateNav();
-
-  /* ── Scroll reveal via IntersectionObserver ───────────── */
-  var io = new IntersectionObserver(function (entries) {
-    entries.forEach(function (entry) {
-      if (entry.isIntersecting) {
-        entry.target.classList.add('in-view');
-        io.unobserve(entry.target);
-      }
-    });
-  }, { threshold: 0.08, rootMargin: '0px 0px -30px 0px' });
-
-  $$('.reveal').forEach(function (el) { io.observe(el); });
-
-  /* ── Footer year ──────────────────────────────────────── */
-  var yr = document.getElementById('yr');
+  /* Footer year */
+  var yr = $('#yr');
   if (yr) yr.textContent = new Date().getFullYear();
+
+  /* Mobile nav */
+  var burger = $('#burger');
+  var mobNav = $('#mobNav');
+  var mobNavClose = $('#mobNavClose');
+
+  function setNav(open) {
+    mobNav.classList.toggle('open', open);
+    mobNav.setAttribute('aria-hidden', String(!open));
+    burger.setAttribute('aria-expanded', String(open));
+    document.body.style.overflow = open ? 'hidden' : '';
+  }
+
+  if (burger && mobNav) {
+    burger.addEventListener('click', function () { setNav(!mobNav.classList.contains('open')); });
+    mobNavClose.addEventListener('click', function () { setNav(false); });
+    $$('.mob-nav__link').forEach(function (l) {
+      l.addEventListener('click', function () { setNav(false); });
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape' && mobNav.classList.contains('open')) setNav(false);
+    });
+  }
+
+  /* Scroll reveals */
+  var reveals = $$('.reveal');
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) {
+          en.target.classList.add('is-in');
+          io.unobserve(en.target);
+        }
+      });
+    }, { threshold: 0.15, rootMargin: '0px 0px -8% 0px' });
+    reveals.forEach(function (el) { io.observe(el); });
+  } else {
+    reveals.forEach(function (el) { el.classList.add('is-in'); });
+  }
+
+  /* Scroll spy for rail */
+  var links = $$('.nav-link');
+  var sections = links.map(function (l) { return document.getElementById(l.dataset.s); }).filter(Boolean);
+
+  function setActive(id) {
+    links.forEach(function (l) { l.classList.toggle('active', l.dataset.s === id); });
+  }
+
+  if ('IntersectionObserver' in window && sections.length) {
+    var spy = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (en.isIntersecting) setActive(en.target.id);
+      });
+    }, { rootMargin: '-40% 0px -55% 0px' });
+    sections.forEach(function (s) { spy.observe(s); });
+  }
+
+  /* Rail progress fill */
+  var railFill = $('#railFill');
+  var ticking = false;
+
+  function onScroll() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function () {
+      var max = document.documentElement.scrollHeight - window.innerHeight;
+      var p = max > 0 ? window.scrollY / max : 0;
+      if (railFill) railFill.style.height = (p * 100).toFixed(2) + '%';
+      ticking = false;
+    });
+  }
+
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
 
 })();
